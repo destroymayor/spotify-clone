@@ -1,82 +1,156 @@
-import Head from 'next/head'
+import Head from 'next/head';
+
+import Layout from '@/components/Layout/Layout';
+import { PauseIcon, PlayIcon } from '@/components/Icons/Icons';
 
 export default function Home() {
+  const topSection = {
+    title: 'Good afternoon',
+    data: [
+      { title: 'EDM' },
+      { title: 'Liked Songs' },
+      { title: 'Discover Weekly' },
+      { title: 'Playlist 1' },
+      { title: 'Playlist 2' },
+      { title: 'Playlist 3' },
+    ],
+  };
+
+  const sections = [
+    {
+      title: 'Your shows',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+    {
+      title: 'Made For Jared',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+    {
+      title: 'Recently played',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+    {
+      title: 'Your top mixes',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+    {
+      title: 'Your playlists',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+    {
+      title: 'Episodes for you',
+      data: [
+        { title: 'EDM 1', author: 'By Jared' },
+        { title: 'EDM 2', author: 'By Jared' },
+        { title: 'EDM 3', author: 'By Jared' },
+        { title: 'EDM 4', author: 'By Jared' },
+        { title: 'EDM 5', author: 'By Jared' },
+        { title: 'EDM 6', author: 'By Jared' },
+        { title: 'EDM 7', author: 'By Jared' },
+      ],
+    },
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Spotify - Web Player</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <main className="px-8 pt-4 pb-10 bg-gray-800">
+        <section>
+          <h2 className="py-4 text-3xl font-bold text-gray-200">{topSection.title}</h2>
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+            {topSection.data.map((item) => (
+              <div
+                className="flex items-center h-20 text-gray-200 transition-all duration-200 bg-gray-600 rounded-md cursor-pointer bg-opacity-10 group hover:bg-opacity-30"
+                key={item.title}
+              >
+                <div className="min-w-[80px] min-h-[80px] bg-blue-200 rounded-l-md"></div>
+                <div className="flex justify-between flex-1 px-4">
+                  <span className="font-bold text-md">{item.title}</span>
+                  <button className="bg-[#1db054] opacity-0 w-10 h-10 rounded-full flex justify-center items-center transition duration-300 ease-in-out hover:scale-[1.1] group-hover:opacity-100">
+                    <PlayIcon />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
+        <div>
+          {sections.map((item) => (
+            <section key={item.title} className="mt-6">
+              <div className="flex items-end justify-between py-6">
+                <button className="text-2xl font-bold text-gray-200 hover:underline">
+                  <h2>{item.title}</h2>
+                </button>
+                <button className="text-sm font-bold text-gray-400 hover:underline">SEE ALL</button>
+              </div>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+              <div className="flex flex-wrap items-center gap-4 overflow-x-hidden text-gray-200">
+                {item.data.map((data) => (
+                  <div
+                    key={data.title}
+                    className="w-[183px] h-[282px] transition-all duration-200 bg-gray-600 rounded-md cursor-pointer bg-opacity-10 hover:bg-opacity-30 p-4"
+                  >
+                    <div className="w-full h-[163px] bg-gray-500 rounded-xl mb-4 shadow-md"></div>
+                    <div className="min-h-[62px]">
+                      <div>{data.title}</div>
+                      <div>{data.author}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+    </>
+  );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
