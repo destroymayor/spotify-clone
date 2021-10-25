@@ -10,7 +10,7 @@ export default function Podcasts() {
         <title>Spotify - Podcasts</title>
       </Head>
 
-      <div>Podcasts</div>
+      <div className="h-full bg-gray-800"></div>
     </>
   );
 }

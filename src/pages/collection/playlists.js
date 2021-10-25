@@ -10,7 +10,7 @@ export default function Playlist() {
         <title>Spotify - Playlist</title>
       </Head>
 
-      <div>Playlist</div>
+      <div className="h-full bg-gray-800"></div>
     </>
   );
 }

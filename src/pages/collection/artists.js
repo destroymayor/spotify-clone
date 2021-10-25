@@ -10,7 +10,7 @@ export default function Artists() {
         <title>Spotify - Artists</title>
       </Head>
 
-      <div>Artists</div>
+      <div className="h-full bg-gray-800"></div>
     </>
   );
 }

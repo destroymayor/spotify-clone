@@ -10,7 +10,7 @@ export default function Albums() {
         <title>Spotify - Albums</title>
       </Head>
 
-      <div>Albums</div>
+      <div className="h-full bg-gray-800"></div>
     </>
   );
 }

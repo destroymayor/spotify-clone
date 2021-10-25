@@ -1,4 +1,4 @@
-import { HeartIcon, DesktopComputerIcon } from '@heroicons/react/outline';
+import { PipToggleIcon, HeartIconOutline } from '@/components/Icons/Icons';
 
 const Widget = () => {
   return (
@@ -10,10 +10,10 @@ const Widget = () => {
       </div>
       <div className="flex items-center px-4 gap-x-3">
         <button className="transition duration-200 ease-in-out hover:text-gray-400">
-          <HeartIcon className="w-5 h-5" />
+          <HeartIconOutline />
         </button>
         <button className="transition duration-200 ease-in-out hover:text-gray-400">
-          <DesktopComputerIcon className="w-5 h-5" />
+          <PipToggleIcon />
         </button>
       </div>
     </div>

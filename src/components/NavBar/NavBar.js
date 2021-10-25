@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 
 import {
   SpotifyIcon,
-  HomeIcon,
+  HomeIconSolid,
+  HomeIconOutline,
   SearchIcon,
   LibraryIcon,
   CreateIcon,
@@ -14,7 +15,7 @@ const NavBar = () => {
   const router = useRouter();
 
   const navigation = [
-    { icon: <HomeIcon />, title: 'Home', pathname: '/' },
+    { icon: <HomeIconSolid />, title: 'Home', pathname: '/' },
     { icon: <SearchIcon />, title: 'Search', pathname: '/search' },
     {
       icon: <LibraryIcon />,
@@ -39,9 +40,11 @@ const NavBar = () => {
 
   return (
     <nav>
-      <div className="px-4 py-6">
-        <SpotifyIcon />
-      </div>
+      <Link href="/" passHref>
+        <div className="px-4 py-6 cursor-pointer">
+          <SpotifyIcon />
+        </div>
+      </Link>
 
       <ul className="flex flex-col">
         {navigation.map((item) => (
