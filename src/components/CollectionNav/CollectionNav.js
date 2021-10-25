@@ -18,7 +18,7 @@ const CollectionNav = () => {
           <div
             className={`${
               item.pathname === router.pathname && 'bg-gray-700'
-            } p-3 text-gray-100 rounded-md cursor-pointer`}
+            } py-2 px-3 text-gray-100 rounded-md cursor-pointer`}
           >
             {item.title}
           </div>

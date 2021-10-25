@@ -14,8 +14,14 @@ import {
 const NavBar = () => {
   const router = useRouter();
 
+  console.log(router);
+
   const navigation = [
-    { icon: <HomeIconSolid />, title: 'Home', pathname: '/' },
+    {
+      icon: router.route === '/' ? <HomeIconSolid /> : <HomeIconOutline />,
+      title: 'Home',
+      pathname: '/',
+    },
     { icon: <SearchIcon />, title: 'Search', pathname: '/search' },
     {
       icon: <LibraryIcon />,

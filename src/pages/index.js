@@ -129,19 +129,21 @@ export default function Home() {
                 <button className="text-sm font-bold text-gray-400 hover:underline">SEE ALL</button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4 overflow-x-hidden text-gray-200">
-                {item.data.map((data) => (
-                  <div
-                    key={data.title}
-                    className="w-[183px] h-[282px] transition-all duration-200 bg-gray-600 rounded-md cursor-pointer bg-opacity-10 hover:bg-opacity-30 p-4"
-                  >
-                    <div className="w-full h-[163px] bg-gray-500 rounded-xl mb-4 shadow-md"></div>
-                    <div className="min-h-[62px]">
-                      <div>{data.title}</div>
-                      <div>{data.author}</div>
+              <div className="flex overflow-x-scroll">
+                <div className="flex items-center gap-4 text-gray-200">
+                  {item.data.map((data) => (
+                    <div
+                      key={data.title}
+                      className="w-[183px] h-[282px] transition-all duration-200 bg-gray-600 rounded-md cursor-pointer bg-opacity-10 hover:bg-opacity-30 p-4"
+                    >
+                      <div className="w-full h-[163px] bg-gray-500 rounded-xl mb-4 shadow-md"></div>
+                      <div className="min-h-[62px]">
+                        <div>{data.title}</div>
+                        <div>{data.author}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </section>
           ))}
