@@ -41,7 +41,7 @@ export default function Search() {
         <title>Spotify - Search</title>
       </Head>
 
-      <main className="px-8 pt-4 pb-10 bg-gray-800">
+      <main className="h-full px-8 pt-4 pb-10 bg-gray-800">
         <section>
           <h2 className="py-4 text-xl font-bold text-gray-200">{topSection.title}</h2>
           <div className="grid grid-cols-3 grid-rows-1 gap-4 overflow-hidden auto-cols-auto">
